@@ -1,0 +1,43 @@
+{
+    "editor.quickSuggestions": {
+        "other": "on",
+        "comments": "on",
+        "strings": "on"
+    },
+    "tailwindCSS.codeLens": true,
+    "tailwindCSS.includeLanguages": {
+        "plaintext": "html"
+    },
+    "tailwindCSS.codeActions": true,
+    "tailwindCSS.colorDecorators": true,
+    "tailwindCSS.suggestions": true,
+    "tailwindCSS.lint.suggestCanonicalClasses": "warning",
+    "tailwindCSS.validate": true,
+    "[tailwindcss]": {},
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "libs":true
+    },"typescript.autoClosingTags": true,
+    "[typescript]": {
+        "editor.codeLens": true,"diffEditor.experimental.showMoves": true
+    },
+    "javascript.autoClosingTags": true,
+    "javascript.format.semicolons": "insert",
+    "javascript.inlayHints.variableTypes.enabled": true,
+    "javascript.format.enable": true,
+    "javascript.preferences.organizeImports": {"accentCollation": true,"caseFirst": "lower","typeOrder": "first","unicodeCollation": "ordinal"},
+    "javascript.referencesCodeLens.enabled": true,
+    "[javascript]": {
+        "editor.maxTokenizationLineLength": 2500,
+        "editor.suggest.showSnippets": true
+    },
+    "html.format.maxPreserveNewLines": 2500,
+    "[html]": {
+        "editor.suggest.insertMode": "replace",
+        "editor.inlayHints.maximumLength": 100,"editor.stickyScroll.maxLineCount": 20
+    }
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invoicing App - Login</title>
+  <!-- Eruda - Mobile Console -->
+<!-- 
+  <script src="./libs/eruda.js"></script>
+  <script>
+    try {
+      eruda.init();
+    }catch {}
+
+  </script> -->
+
+
+  <script src="./libs/taillwind.v4.js"></script>
+  
+
+  <style>
+    .modal-enter-active,
+    .modal-leave-active {
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .modal-enter-from,
+    .modal-leave-to {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    .modal-enter-to,
+    .modal-leave-from {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <div id="app" class="no">
+    <div :class="isAuthenticated ? 'bg-white min-h-screen' : 'bg-gradient-to-br from-indigo-50 via-white to-purple-50 min-h-screen'">
+      <div id="xapp">
+        <!-- Unauthenticated: Login View -->
+        <div v-if="!isAuthenticated" class="flex justify-center items-center min-h-screen">
+          <loading-spinner v-if="loading" message="Logging in..."></loading-spinner>
+          <error-message v-else-if="error" :message="error" action-text="Try Again" @action="retry"></error-message>
+          <login-card v-else @login="handleLogin"></login-card>
+        </div>
+
+        <!-- Authenticated: Products View -->
+        <div v-else class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex justify-center items-center min-h-screen">
+          <loading-spinner v-if="loading" message="Loading products..."></loading-spinner>
+          <error-message v-else-if="error" :message="error" action-text="Try Again" @action="retry"></error-message>
+          <div v-else class="space-y-8">
+            <products-grid :products="products" @add-to-invoice="handleAddToInvoice"></products-grid>
+          </div>
+        </div>
+      </div>
+      <link rel="stylesheet" href="./res/components.css">
+      <bottom-navbar :buttons="floatButtons" @button-click="handleButtonClick" @search-input="onSearch(this,$event)" class="z-[1000] pt-3"></bottom-navbar>
+      <!-- Modal Root Teleport Target -->
+
+    </div>
+    <teleport to="#modal-root">
+      <transition  appear>
+       <div ref="modalPortal" class="no">
+         
+       </div>
+      </transition>
+    </teleport>
+  </div>
+  <div id="modal-root" class="no"></div>
+  <script src='./index.js' type="module"></script>
+  <script type="module">
+    try {
+      // export * from 'https://unpkg.com/vue@3.5.12/dist/vue.esm-browser.prod.js';
+
+      //export *  from './bottomNavbar.js';
+      // Your module code here
+      // import * from './index.js'; // or your actual code
+      // import * from './components/init.js';
+    } catch (err) {
+      console.error('Module load error:', err, err.stack);
+
+    }
+  </script>
+
+</body>
+</html>

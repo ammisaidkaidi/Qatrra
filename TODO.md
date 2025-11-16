@@ -1,0 +1,8 @@
+- [x] Update schema.ts imports to include all necessary Drizzle types (char, numeric, timestamp, doublePrecision, references)
+- [x] Define clients table with all fields: id, ref, name, email, phone, address, pwd, observation, created_at, updated_at
+- [x] Define categories table with all fields: id, ref, name, description, created_at, updated_at
+- [x] Define products table with all fields: id, ref, category_id, name, description, price, qte, picture, created_at, updated_at
+- [x] Define invoices table with all fields: id, ref, client_id, total, status, client, observation, created_at, updated_at
+- [x] Define invoice_items table with all fields: id, invoice_id, product_id, qte, price, total, product, observation, created_at, updated_at
+- [x] Define locations table with all fields: id, user_id, tracker_id, latitude, longitude, accuracy, note, created_at, updated_at
+- [x] Remove the placeholder posts table

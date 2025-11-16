@@ -1,0 +1,31 @@
+{
+  "name": "bakiri",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "netlify dev:exec drizzle-kit migrate",
+    "db:studio": "netlify dev:exec drizzle-kit studio"
+  },
+  "author": "Achour Brahim",
+  "license": "ISC",
+  "dependencies": {
+    "@netlify/functions": "^3.1.10",
+    "@netlify/neon": "^0.1.0",
+    "@supabase/supabase-js": "^2.76.1",
+    "@tailwindcss/vite": "^4.1.16",
+    "@types/node": "^22.19.1",
+    "drizzle-orm": "^0.44.7",
+    "idb": "^8.0.3",
+    "neon": "^2.0.0",
+    "pg": "^8.16.3",
+    "tailwindcss": "^4.1.16",
+    "typescript": "^4.9.5"
+  },
+  "description": "",
+  "devDependencies": {
+    "@types/pg": "^8.15.6",
+    "drizzle-kit": "^0.31.7"
+  }
+}
